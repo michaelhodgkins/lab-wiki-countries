@@ -1,12 +1,14 @@
+import data from '../countries.json';
+
 import { Link } from "react-router-dom";
 
-function CountryList({country}) {
+function CountryList({countries}) {
     return (
     <div>
-        {country.map(single => {
+        {data.map(country => {
             return (
-                <div key={single.alpha3Code}>
-                    <Link to={`/${single.alpha3Code}`}>{single.name.common}</Link>
+                <div key={country.alpha3Code}>
+                    <Link to={`/${country.alpha3Code}`}>{country.name.common}</Link>
 
                 </div>
             )
@@ -15,7 +17,3 @@ function CountryList({country}) {
         )}
   
   export default CountryList;
-
-
-
-
